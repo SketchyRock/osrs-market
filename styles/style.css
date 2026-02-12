@@ -1,0 +1,239 @@
+/* General Body and Typography */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #121212;
+    color: #e0e0e0;
+    margin: 0;
+}
+
+h1 {
+    color: #ff9800;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center; /* Default for h1 */
+    margin-bottom: 40px; /* Default for h1 */
+}
+
+/* General Container (from index.html, but without layout for now) */
+.container {
+    width: 800px;
+    max-width: 90%;
+}
+
+/* General Card Styling */
+.card { /* A general card class for common properties */
+    background-color: #1e1e1e;
+    border: 1px solid #333;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: #ff9800;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    background-color: #252525;
+}
+
+/* Specific styles for index.html's app cards */
+.app-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.app-card { /* Extends .card */
+    border-radius: 12px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.app-card .icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.app-card .app-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.app-card .app-desc {
+    font-size: 0.9rem;
+    color: #888;
+    line-height: 1.4;
+}
+
+/* Status Indicators */
+.status {
+    margin-top: 15px;
+    font-size: 0.75rem;
+    padding: 4px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.status.live { background: rgba(0, 230, 118, 0.1); color: #00e676; }
+.status.wip { background: rgba(255, 152, 0, 0.1); color: #ff9800; }
+.status.idea { background: rgba(158, 158, 158, 0.1); color: #9e9e9e; }
+
+/* Specific styles for runescape.html */
+#list-container {
+    width: 400px;
+    border-right: 1px solid #333;
+    display: flex;
+    flex-direction: column;
+    background: #181818;
+}
+.controls-wrapper {
+    padding: 15px;
+    border-bottom: 1px solid #333;
+    background: #1f1f1f;
+}
+
+/* Inputs */
+.search-bar {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #444;
+    background: #121212;
+    color: white;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+.filter-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+.filter-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+label {
+    font-size: 0.75em;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+input[type="number"] {
+    background: #222;
+    border: 1px solid #444;
+    color: white;
+    padding: 6px;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Buttons */
+.btn-primary { /* Renamed from btn-apply for generality */
+    width: 100%;
+    padding: 10px;
+    background:#ff9800;
+    border:none;
+    cursor:pointer;
+    color:black;
+    font-weight:bold;
+    border-radius:4px;
+    margin-top: 5px;
+}
+.btn-primary:hover {
+    background: #e68a00;
+}
+
+/* List */
+#item-list {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 10px;
+}
+.item-card { /* Extends .card */
+    background: #252525; /* Override .card background */
+    padding: 10px; /* Override .card padding */
+    margin-bottom: 8px;
+    border-radius: 6px; /* Override .card border-radius */
+    cursor: pointer;
+    border-left: 4px solid transparent;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    text-align: left;
+}
+.item-card:hover {
+    background: #303030; /* Override .card:hover background */
+}
+.item-card.active {
+    background: #333;
+    border-left-color: #ff9800;
+}
+
+/* Detail View */
+#detail-container {
+    flex-grow: 1;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+#detail-container .header-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+#detail-container h1 { /* Override general h1 for detail-container context */
+    margin: 0;
+    font-size: 1.8em;
+    text-align: left;
+    text-transform: none;
+    letter-spacing: normal;
+}
+#detail-container #item-subtitle {
+    color: #888;
+}
+
+.big-icon {
+    width: 48px;
+    height: 48px;
+}
+
+/* Stats Grid (3x2 Layout) */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 20px;
+}
+.stat-card {
+    background: #1e1e1e;
+    padding: 15px;
+    border-radius: 8px;
+    border-top: 3px solid #444;
+}
+.stat-label {
+    font-size: 0.8em;
+    color: #888;
+    display: block;
+    margin-bottom: 5px;
+}
+.stat-value {
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+/* Utility Colors */
+.c-green { color: #00e676; border-color: #00e676; }
+.c-red { color: #ff5252; border-color: #ff5252; }
+.c-blue { color: #2979ff; border-color: #2979ff; }
+.c-orange { color: #ff9800; border-color: #ff9800; }
